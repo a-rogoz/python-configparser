@@ -36,7 +36,7 @@ print("Host:", config["redis"]["host"])
 print("Port", config["redis"]["port"])
 print("Database number:", int(config["redis"]["db"]))
 
-config["redis"]["db"] = 1
+config["redis"]["db"] = "1"
 
 with open("config.ini", "w") as configfile:
     config.write(configfile)
@@ -61,11 +61,8 @@ with open("settings.ini", "w") as configfile:
 #####
 
 
-import configparser
-
-
 config = configparser.ConfigParser()
-config.read("mess.ini")
+config.read("mess.ini")  # Available in the Lab's working directory
 
 # Dev config.
 dev_config = configparser.ConfigParser()
